@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Updated color scheme for printing & packaging brand */
+  --cyan: #00bcd4;
+  --magenta: #e91e63;
+  --yellow: #ffc107;
+  --dark-gray: #2c2c2c;
+  --light-gray: #f5f5f5;
+  --white: #ffffff;
+  --text-dark: #1a1a1a;
+  --text-light: #666666;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--white);
+    color: var(--text-dark);
+    font-family: "Inter", sans-serif;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-md text-sm font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    background-color: var(--dark-gray);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background-color: #3a3a3a;
+  }
+
+  .btn-secondary {
+    background-color: white;
+    color: var(--dark-gray);
+    border: 1px solid var(--dark-gray);
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--light-gray);
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-8 text-center;
+    color: var(--text-dark);
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+}
+
+@layer utilities {
+  .text-content {
+    color: var(--text-light);
+  }
+}
