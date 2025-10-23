@@ -8,8 +8,8 @@ export default function Hero() {
     <section id="home" className="relative min-h-screen flex items-center pt-16">
       <div className="absolute inset-0 z-0">
         <img
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Slide%2016_9%20-%201%20%283%29-vboiGZJqYJaN2YueMZpCBGxPeWrCz4.jpg"
-          alt="Industrial printing machinery"
+          src="/AMP.jpg"
+          alt="Industrial printing machinerye"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/50"></div>
@@ -31,8 +31,10 @@ export default function Hero() {
             Future
           </h1>
           <p className="text-lg md:text-xl mb-8 text-white/90 max-w-2xl">
-            Founded in 2016, Myanmar Print & Pack (MPP) is a leading public company providing integrated solutions
-            across printing, packaging, and educational technology.
+              Myanmar Print & Pack delivers comprehensive, innovative, and ethical
+              printing, packaging, and educational technology solutions. We are
+              committed to driving growth and sustainability for our clients and
+              stakeholders.
           </p>
           <motion.button
             whileHover={{ scale: 1.05 }}

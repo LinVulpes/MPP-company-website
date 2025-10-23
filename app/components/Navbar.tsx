@@ -32,16 +32,18 @@ export default function Navbar() {
       transition={{ duration: 0.5 }}
       className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-md" : "bg-white"}`}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-lg">MP</span>
-              </div>
-              <span className="text-xl font-bold text-[var(--text-dark)]">Myanmar Print & Pack</span>
-            </Link>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 overflow-visible">
+        <div className="flex items-center justify-between h-20 overflow-visible">
+          <div className="relative flex items-center justify-between h-20 overflow-visible">
+            <a href="/" className="flex items-center space-x-2 overflow-visible">
+              <img
+                src="/logo.png"
+                alt="Myanmar Print & Pack logo"
+                className="w-32 h-32" // increased size and slightly shifted upward
+              />
+            </a>
           </div>
+
           <div className="hidden md:flex items-center space-x-8">
             <div className="flex items-baseline space-x-6">
               {navItems.map((item) => (
