@@ -49,7 +49,7 @@ export default function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="relative text-[var(--text-dark)] px-3 py-2 text-[16px] font-medium transition-colors duration-300 hover:text-[var(--cyan)]"
+                  className="relative text-[var(--text-dark)] px-3 py-2 text-[16px] font-medium transition-colors hover:text-[var(--cyan)]"
                   onClick={(e) => {
                     e.preventDefault()
                     const targetId = item.href.slice(1)
@@ -61,14 +61,14 @@ export default function Navbar() {
                     }
                   }}
                 >
-                  <span className="inline-block transition-transform duration-300 hover:scale-110">
+                  <span className="inline-block transition-transform hover:scale-110">
                     {item.name}
                   </span>
                 </Link>
               ))}
             </div>
             {/* Contact Us Button */}
-            <button className="group flex items-center gap-2 bg-[#062B44] text-white px-6 py-3 rounded-[12px] hover:bg-[#094067] transition-all duration-300 shadow-sm">
+            <button className="group flex items-center gap-2 bg-[#062B44] text-white px-6 py-3 rounded-[12px] hover:bg-[#094067] transition-all shadow-sm">
               Contact Us <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
             </button>
           </div>

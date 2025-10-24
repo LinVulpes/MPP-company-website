@@ -22,7 +22,7 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="max-w-3xl text-white"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
             Integrated Printing &<br />
             Packaging Solutions
             <br />
@@ -30,7 +30,7 @@ export default function Hero() {
             <br />
             Future
           </h1>
-          <p className="text-lg md:text-xl mb-8 text-white/90 max-w-2xl">
+          <p className="text-lg md:text-xl mb-8 text-white/90 max-w-xl">
               Myanmar Print & Pack delivers comprehensive, innovative, and ethical
               printing, packaging, and educational technology solutions. We are
               committed to driving growth and sustainability for our clients and

@@ -1,30 +1,34 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Printer, Palette, Package, Wrench } from "lucide-react"
+import { Palette, Package, Wrench } from "lucide-react"
+import { GrPaint } from "react-icons/gr";
+import { BsFillPrinterFill } from "react-icons/bs";
+import { MdMiscellaneousServices } from "react-icons/md";
+import { FiPlusCircle } from "react-icons/fi"
 
 const services = [
   {
     title: "TINTS",
-    icon: Printer,
-    color: "bg-[var(--cyan)]",
+    icon: GrPaint,
+    color: "bg-[var(--light-blue)]",
     description: "Professional printing solutions",
   },
   {
-    title: "CANVAS",
-    icon: Palette,
+    title: "PRINT",
+    icon: BsFillPrinterFill,
     color: "bg-[var(--magenta)]",
     description: "High-quality canvas printing",
   },
   {
-    title: "SPARE PARTS",
+    title: "PACKAGE",
     icon: Package,
     color: "bg-[var(--yellow)]",
     description: "Genuine spare parts supply",
   },
   {
     title: "SERVICE",
-    icon: Wrench,
+    icon: MdMiscellaneousServices,
     color: "bg-[var(--dark-gray)]",
     description: "Expert maintenance services",
   },
@@ -41,13 +45,13 @@ export default function ServiceCards() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`${service.color} text-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer group`}
+              className={`${service.color} text-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer group service-card`}
             >
               <div className="flex flex-col items-center text-center">
                 <service.icon className="w-12 h-12 mb-4 group-hover:scale-110 transition-transform duration-300" />
                 <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                <div className="w-8 h-8 border-2 border-white rounded-full flex items-center justify-center mt-4">
-                  <span className="text-2xl font-light">+</span>
+                <div className="mt-4">
+                  <FiPlusCircle className="w-8 h-8 plus-icon" />
                 </div>
               </div>
             </motion.div>
