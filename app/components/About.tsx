@@ -7,15 +7,45 @@ export default function About() {
   return (
     <section id="about" className="bg-white py-20 md:py-28 font-[Raleway]">
       <div className="container mx-auto px-6 md:px-12 lg:px-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-          {/* Left Side — Text Content */}
+          {/* LEFT SIDE — IMAGES */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="relative"
+          >
+            <div className="relative grid grid-cols-2 grid-rows-2 gap-4">
+              <div className="col-span-2 space-y-9 z-10 overflow-hidden">
+                <Image
+                  src="/images/canvas.png"
+                  alt="Printing machinery"
+                  width={500}
+                  height={420}
+                  className="w-[400px] h-[320px] object-cover rounded-lg shadow-md"
+                />
+              </div>
+              <div className="absolute top-64 -right-5 z-20">
+                <Image
+                  src="/images/digital-printing-services.png"
+                  alt="PColor printing sample"
+                  width={500}
+                  height={420}
+                  className="w-[400px] h-[320px] object-cover rounded-lg shadow-md"
+                />
+              </div>
+            </div>
+          </motion.div>
+
+
+          {/* Right Side — Text Content */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="order-2 lg:order-1"
+            className="order-2"
           >
             <p className="text-gray-600 mb-8 leading-relaxed">
               Founded in 2016, <strong>Myanmar Print & Pack (MMP)</strong> is a leading
@@ -127,38 +157,6 @@ export default function About() {
               </div>
             </div>
           </motion.div>
-
-          {/* Right Side — Images */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="relative order-1 lg:order-2"
-          >
-            {/* Top Image */}
-            <div className="relative z-20 rounded-lg overflow-hidden shadow-lg">
-              <Image
-                src="/industrial-printing-press-machine.jpg"
-                alt="Printing machine"
-                width={600}
-                height={400}
-                className="w-full h-auto object-cover"
-              />
-            </div>
-
-            {/* Overlapping Bottom Image */}
-            <div className="absolute -bottom-12 -left-10 w-3/4 rounded-lg overflow-hidden shadow-md z-10 hidden md:block">
-              <Image
-                src="/cmyk-color-printing-samples.jpg"
-                alt="Color printing sample"
-                width={400}
-                height={300}
-                className="object-cover w-full h-full"
-              />
-            </div>
-          </motion.div>
-
         </div>
       </div>
     </section>

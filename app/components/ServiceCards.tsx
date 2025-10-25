@@ -38,7 +38,7 @@ export default function ServiceCards() {
   return (
     <section className="relative -mt-20 z-20">
       <div className="container">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
