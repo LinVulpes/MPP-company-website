@@ -1,14 +1,36 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Image from "next/image";
+import { motion } from "framer-motion"
+import { ArrowRight } from "lucide-react"
+import Image from "next/image"
 
 export default function About() {
   return (
-    <section id="about" className="bg-white py-20 md:py-28 font-[Raleway]">
+    <section id="about" className="bg-white py-20 md:py-28">
       <div className="container mx-auto px-6 md:px-12 lg:px-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="max-w-4xl mb-12"
+        >
+          <p className="text-gray-600 leading-tight text-xl font-body mb-8">
+            Founded in 2016, <strong>Myanmar Print & Pack (MMP)</strong> is a leading public company providing
+            integrated solutions across printing, packaging, and educational technology. We deliver exceptional value
+            through our Intelligent Print Solutions, Ethical Trust Business Group, and Edu-Tech divisions, driving
+            sustainable growth and innovation.
+          </p>
 
+          <div className="flex items-center gap-3 mt-8 cursor-pointer group">
+            <span className="text-xl font-semibold text-gray-800 group-hover:text-[var(--light-blue)] transition-colors">
+              Our Story
+            </span>
+            <ArrowRight className="w-5 h-5 group-hover:text-[var(--light-blue)] group-hover:translate-x-1 transition-transform" />
+          </div>
+        </motion.div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
           {/* LEFT SIDE — IMAGES */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -47,29 +69,10 @@ export default function About() {
             viewport={{ once: true }}
             className="order-2"
           >
-            <p className="text-gray-600 mb-8 leading-relaxed">
-              Founded in 2016, <strong>Myanmar Print & Pack (MMP)</strong> is a leading
-              public company providing integrated solutions across printing,
-              packaging, and educational technology. We deliver exceptional value
-              through our Intelligent Print Solutions, Ethical Trust Business
-              Group, and Edu-Tech divisions, driving sustainable growth and innovation.
+            <p className="text-gray-600 leading-tight text-xl font-body mb-8">
+              We are a complete print and packaging solution provider, delivering professional,
+              high-quality results from start to finished product.
             </p>
-
-            <div className="flex items-center gap-3 mb-8 cursor-pointer group">
-              <span className="font-semibold text-gray-800 group-hover:text-cyan-600 transition-colors">
-                Our Story
-              </span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="w-5 h-5 text-cyan-600 group-hover:translate-x-1 transition-transform"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-              </svg>
-            </div>
 
             <div className="bg-gray-50 p-8 rounded-xl shadow-sm">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">We Provide</h3>
@@ -77,8 +80,7 @@ export default function About() {
 
                 {/* Item 1 */}
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow">
-                    {/* Custom icon for Paper */}
+                  <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow">                    {/* Custom icon for Paper */}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
@@ -95,7 +97,7 @@ export default function About() {
                     </svg>
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900">
+                    <p className="font-medium text-gray-900 font-sans">
                       Importing and distributing premium papers
                     </p>
                     <p className="text-sm text-gray-600">

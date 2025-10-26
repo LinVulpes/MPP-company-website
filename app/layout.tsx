@@ -1,9 +1,9 @@
 import type React from "react"
 import "./globals.css"
-import { Inter, Space_Grotesk } from "next/font/google"
+import { Raleway, Nunito_Sans } from "next/font/google"
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space-grotesk" })
+const raleway = Raleway({ subsets: ["latin"], variable: "--font-raleway" })
+const nunitoSans = Nunito_Sans({ subsets: ["latin"], variable: "--font-nunito-sans" })
 
 export const metadata = {
   title: "Myanmar Print & Pack - Integrated Printing & Packaging Solutions",
@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans`}>{children}</body>
+      <body className={`${raleway.variable} ${nunitoSans.variable} font-sans`}>{children}</body>
     </html>
   )
 }
