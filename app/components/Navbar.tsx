@@ -4,17 +4,19 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Menu, X, ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
+import { usePathname } from "next/navigation"
 
 const navItems = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Services", href: "#services" },
-  { name: "Portfolio", href: "#portfolio" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Services", href: "/services" },
+  { name: "Contact", href: "/contact" },
 ]
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +25,25 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // If it's a page route (starts with / but not #), let Next.js handle it
+    if (href.startsWith("/") && !href.includes("#")) {
+      setIsOpen(false)
+      return
+    }
+
+    // Handle hash links
+    e.preventDefault()
+    setIsOpen(false)
+    const targetId = href.slice(1)
+    const targetElement = document.getElementById(targetId)
+    if (targetElement) {
+      const yOffset = -80
+      const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset
+      window.scrollTo({ top: y, behavior: "smooth" })
+    }
+  }
 
   return (
     <motion.nav
@@ -45,28 +66,41 @@ export default function Navbar() {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             <div className="flex items-baseline space-x-6">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="relative text-[var(--text-dark)] px-3 py-2 text-[16px] font-medium transition-colors hover:text-[var(--cyan)]"
-                  onClick={(e) => {
-                    e.preventDefault()
-                    const targetId = item.href.slice(1)
-                    const targetElement = document.getElementById(targetId)
-                    if (targetElement) {
-                      const yOffset = -80
-                      const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset
-                      window.scrollTo({ top: y, behavior: "smooth" })
-                    }
-                  }}
-                >
-                  <span className="inline-block transition-transform hover:scale-110">
-                    {item.name}
-                  </span>
-                </Link>
-              ))}
+              {navItems.map((item) => {
+                const isActive = pathname === item.href
+                return (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    onClick={(e) => {
+                      if (item.href.startsWith("#")) {
+                        e.preventDefault()
+                        const targetId = item.href.slice(1)
+                        const targetElement = document.getElementById(targetId)
+                        if (targetElement) {
+                          const yOffset = -80
+                          const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset
+                          window.scrollTo({ top: y, behavior: "smooth" })
+                        }
+                      }
+                      setIsOpen(false)
+                    }}
+                    className={`relative text-[var(--text-dark)] px-3 py-2 text-[16px] font-medium transition-colors ${isActive ? "text-[var(--dark-blue)]" : "hover:text-[var(--dark-blue)]"
+                      }`}
+                  >
+                    <span
+                      className={`inline-block transition-transform ${isActive
+                          ? "scale-110 text-[18px] font-bold"
+                          : "hover:scale-105 hover:text-[16px] hover:font-bold"
+                        }`}
+                    >
+                      {item.name}
+                    </span>
+                  </Link>
+                )
+              })}
             </div>
+
             {/* Contact Us Button */}
             <button className="group flex items-center gap-2 bg-[#062B44] text-white px-6 py-3 rounded-[12px] hover:bg-[#094067] transition-all shadow-sm">
               Contact Us <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -77,7 +111,7 @@ export default function Navbar() {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-[var(--text-dark)] hover:text-[var(--cyan)] focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-[var(--text-dark)] hover:text-[var(--dark-blue)] focus:outline-none"
             >
               {isOpen ? <X className="block h-6 w-6" /> : <Menu className="block h-6 w-6" />}
             </button>
@@ -99,18 +133,9 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="block text-[var(--text-dark)] hover:text-[var(--cyan)] px-3 py-2 rounded-md text-base font-medium transition-all duration-300 hover:scale-105"
-                onClick={(e) => {
-                  e.preventDefault()
-                  setIsOpen(false)
-                  const targetId = item.href.slice(1)
-                  const targetElement = document.getElementById(targetId)
-                  if (targetElement) {
-                    const yOffset = -80
-                    const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset
-                    window.scrollTo({ top: y, behavior: "smooth" })
-                  }
-                }}
+                onClick={() => setIsOpen(false)}
+                className={`block text-[var(--text-dark)] hover:text-[var(--cyan)] px-3 py-2 rounded-md text-base font-medium 
+      transition-all duration-300 hover:scale-105 ${pathname === item.href ? "text-[var(--cyan)] font-bold" : ""}`}
               >
                 {item.name}
               </Link>
