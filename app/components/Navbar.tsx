@@ -84,12 +84,12 @@ export default function Navbar() {
                       }
                       setIsOpen(false)
                     }}
-                    className={`relative text-[var(--text-dark)] px-3 py-2 text-[16px] font-medium transition-colors ${isActive ? "text-[var(--dark-blue)]" : "hover:text-[var(--dark-blue)]"
+                    className={`relative text-[var(--grey)] px-3 py-2 text-[16px] font-medium transition-colors ${isActive ? "text-[var(--blue)]" : "hover:text-[var(--dark-blue)]"
                       }`}
                   >
                     <span
                       className={`inline-block transition-transform ${isActive
-                          ? "scale-110 text-[18px] font-bold"
+                          ? "scale-110 text-[18px] font-bold text-[var(--dark-blue)]"
                           : "hover:scale-105 hover:text-[16px] hover:font-bold"
                         }`}
                     >
@@ -133,7 +133,7 @@ export default function Navbar() {
                 key={item.name}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className={`block text-[var(--text-dark)] hover:text-[var(--cyan)] px-3 py-2 rounded-md text-base font-medium 
+                className={`block text-[var(--text-dark)] hover:text-[var(--cyan)] px-3 py-2 rounded-md text-base font-medium
       transition-all duration-300 hover:scale-105 ${pathname === item.href ? "text-[var(--cyan)] font-bold" : ""}`}
               >
                 {item.name}

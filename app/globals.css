@@ -6,7 +6,8 @@
   /* Updated color scheme for printing & packaging brand */
   --dark-blue: #052D46;
   --light-blue: #41b6dc;
-  --cyan: #05463b;
+  --blue: #87b4e4;
+  --cyan: #14d1a8;
   --magenta: #e91e63;
   --yellow: #ffc107;
   --dark-gray: #2c2c2c;
@@ -14,6 +15,7 @@
   --white: #ffffff;
   --text-dark: #1a1a1a;
   --text-light: #666666;
+  --grey: #a2a2a2;
 }
 
 /* Rotate the "+" circle when the service card is hovered */

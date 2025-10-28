@@ -12,13 +12,13 @@ const slides = [
       "Myanmar Print & Pack delivers comprehensive, innovative, and ethical printing, packaging, and educational technology solutions. We are committed to driving growth and sustainability for our clients and stakeholders.",
   },
   {
-    image: "/modern-printing-press-with-colorful-materials.jpg",
+    image: "/images/printing-paper-color.png",
     title: "Quality Print Solutions\nfor Modern\nBusinesses",
     description:
       "From premium paper trading to state-of-the-art printing equipment, we provide end-to-end solutions that deliver exceptional results for your business needs.",
   },
   {
-    image: "/packaging-production-line-in-factory.jpg",
+    image: "/images/packaing-and-transporting.png",
     title: "Innovative Packaging\nSolutions That\nMake an Impact",
     description:
       "Our advanced packaging technologies and expert team ensure your products stand out with professional, high-quality packaging that protects and promotes your brand.",
@@ -37,7 +37,7 @@ export default function Hero() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)
-    }, 5000)
+    }, 6000)
     return () => clearInterval(timer)
   }, [])
 
