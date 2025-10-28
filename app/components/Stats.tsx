@@ -38,7 +38,7 @@ export default function Stats() {
             >
               <div className="text-5xl md:text-6xl font-bold mb-2">
                 {stat.number}
-                <span className="text-[var(--cyan)]">{stat.suffix}</span>
+                <span className="text-[var(--white)]">{stat.suffix}</span>
               </div>
               <h3 className="text-xl font-semibold mb-2">{stat.label}</h3>
               <p className="text-white/70 text-sm">{stat.sublabel}</p>

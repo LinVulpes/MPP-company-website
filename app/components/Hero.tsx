@@ -6,7 +6,7 @@ import { useState, useEffect } from "react"
 
 const slides = [
   {
-    image: "AMP.jpg",
+    image: "/images/AMP.jpg",
     title: "Integrated Printing &\nPackaging Solutions\nfor a Sustainable\nFuture",
     description:
       "Myanmar Print & Pack delivers comprehensive, innovative, and ethical printing, packaging, and educational technology solutions. We are committed to driving growth and sustainability for our clients and stakeholders.",
@@ -119,7 +119,7 @@ export default function Hero() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-[var(--cyan)] text-white px-6 py-3 rounded-md hover:bg-[var(--cyan)]/90 flex items-center gap-2 font-semibold transition-colors"
+                className="bg-[var(--dark-blue)] text-white px-3 py-4 rounded-[10px] flex items-center gap-2 font-semibold shadow-sm"
               >
                 Explore Our Services
                 <ArrowRight className="w-5 h-5" />
