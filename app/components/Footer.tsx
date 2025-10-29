@@ -52,18 +52,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#about" className="hover:text-[var(--cyan)] transition duration-300 text-white/70">
+                <Link href="/about" className="hover:text-[var(--cyan)] transition duration-300 text-white/70">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="#services" className="hover:text-[var(--cyan)] transition duration-300 text-white/70">
+                <Link href="/services" className="hover:text-[var(--cyan)] transition duration-300 text-white/70">
                   Services
-                </Link>
-              </li>
-              <li>
-                <Link href="#portfolio" className="hover:text-[var(--cyan)] transition duration-300 text-white/70">
-                  Portfolio
                 </Link>
               </li>
             </ul>

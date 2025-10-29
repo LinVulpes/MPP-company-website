@@ -5,6 +5,7 @@ import About from "./components/About"
 import Services from "./components/Services"
 import Stats from "./components/Stats"
 import WhyPartner from "./components/WhyPartner"
+import LatestNews from "./components/LatestNews"
 import BusinessGroups from "./components/BusinessGroups"
 import Testimonials from "./components/Testimonials"
 import Contact from "./components/Contact"
@@ -21,6 +22,7 @@ export default function Home() {
       <Stats />
       <WhyPartner />
       <BusinessGroups />
+      <LatestNews />
       <Testimonials />
       <Contact />
       <Footer />
