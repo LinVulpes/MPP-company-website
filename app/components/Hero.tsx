@@ -78,7 +78,7 @@ export default function Hero() {
               </h1>
 
               {/* Description */}
-              <p className="text-base md:text-lg lg:text-xl mb-8 text-white/90 max-w-2xl leading-relaxed">
+              <p className="text-base md:text-lg mb-8 text-white/90">
                 {slides[currentSlide].description}
               </p>
 

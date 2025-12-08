@@ -101,9 +101,11 @@ export default function Navbar() {
             </div>
 
             {/* Contact Us Button */}
-            <button className="group flex items-center gap-2 bg-[#062B44] text-white px-6 py-3 rounded-[12px] hover:bg-[#094067] transition-all shadow-sm">
-              Contact Us <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
-            </button>
+            <Link href="/contact">
+              <button className="group flex items-center gap-2 bg-[#062B44] text-white px-6 py-3 rounded-[12px] hover:bg-[#094067] transition-all shadow-sm">
+                Contact Us <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+              </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -139,9 +141,11 @@ export default function Navbar() {
                 {item.name}
               </Link>
             ))}
-            <button className="w-full btn btn-primary mt-4">
-              CONTACT US
-            </button>
+            <Link href="/contact" className="block">
+              <button className="w-full btn btn-primary mt-4">
+                CONTACT US
+              </button>
+            </Link>
           </div>
         </motion.div>
       )}

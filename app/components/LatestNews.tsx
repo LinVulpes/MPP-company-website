@@ -88,6 +88,7 @@ export default function LatestNews() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
                         {visibleItems.map((item, index) => (
                             <motion.div
+                                key={item.id}
                                 initial={{ opacity: 0, x: 50 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 exit={{ opacity: 0, x: -50 }}
